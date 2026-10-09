@@ -1,16 +1,16 @@
 USD_TO_RUB = 95.50
 
-def convert_usd_to_rub(amount_usd: float):
+def convert_usd_to_rub(usd_input):
     """
     Конвертирует сумму из долларов США в российские рубли.
 
     Args:
-        amount_usd (float): Сумма в долларах.
+        usd_input (float): Сумма в долларах.
 
     Returns:
             float: Рассчитанная сумма в рублях по установленному курсу.
     """
-    result_rub = amount_usd * USD_TO_RUB
+    result_rub = usd_input * USD_TO_RUB
     return result_rub
 
 usd_input = float(input("Введите сумму в долларах: "))
