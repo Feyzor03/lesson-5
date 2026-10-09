@@ -1,0 +1,10 @@
+TAX_RATE = 0.13
+
+annual_income = float(input("Введите ваш годовой доход: "))
+
+amount_tax = annual_income * TAX_RATE
+amount_income = annual_income - TAX_RATE
+
+print(f"Общая сумма дохода: {annual_income:,.2f} руб.".replace(",", " "))
+print(f"Сумма рассчитанного налога: {amount_tax:,.2f} руб.".replace(",", " "))
+print(f"Сумма «на руки» после вычета налога: {amount_income:,.2f} руб.".replace(",", " "))
