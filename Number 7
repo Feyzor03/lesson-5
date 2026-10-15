@@ -1,0 +1,32 @@
+def calculate_trip_cost(distance, consumption_per_100km, price_per_liter = 49.5):
+    """
+    Рассчитывает необходимое количество бензина и общую стоимость поездки.
+
+    :param distance: Расстояние в км
+    :param consumption_per_100km: Расход топлива (литров на 100 км)
+    :param price_per_liter: Цена за 1 литр бензина (по умолчанию 49.5)
+    :return: Кортеж (необходимый объем бензина в литрах, общая стоимость)
+    """
+    total_liters = distance * (consumption_per_100km / 100)
+    total_price = total_liters * price_per_liter
+    return total_liters, total_price
+
+
+def main():
+    print("--- Калькулятор поездки на такси ---")
+    try:
+        distance = float(input("Введите расстояние поездки (км): "))
+        consumption = float(input("Введите расход топлива машины (л/100 км): "))
+
+        liters_needed, trip_cost = calculate_trip_cost(distance, consumption)
+
+        print("--- Результаты расчета ---")
+        print(f"Необходимо бензина: {liters_needed:.2f} л.")
+        print(f"Стоимость поездки:  {trip_cost:.2f} руб.")
+
+    except ValueError:
+        print("Ошибка: Пожалуйста, вводите только числовые значения.")
+
+
+if __name__ == "__main__":
+    main()
